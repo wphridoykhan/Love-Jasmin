@@ -1,1 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wp Hridoy ❤️ Jasmin</title>
+<meta name="description" content="A love letter website from Wp Hridoy to Jasmin - celebrating love and togetherness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--pink:#ff4d6d;--rose:#ff758f;--blush:#ffb3c6;--deep:#c9184a;
+--warm:#fff0f3;--gold:#ffd700;--lavender:#e8d5f5;--soft-purple:#b5179e;
+--gradient-love:linear-gradient(135deg,#ff4d6d,#ff758f,#b5179e,#ff4d6d);
+--gradient-warm:linear-gradient(135deg,#fff0f3,#ffe5ec,#e8d5f5);
+--shadow-love:0 10px 40px rgba(255,77,109,0.3);
+--shadow-card:0 8px 32px rgba(255,77,109,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--warm);color:#333;overflow-x:hidden}
 
+/* Floating Hearts */
+.floating-hearts{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.heart-float{position:absolute;bottom:-60px;font-size:20px;animation:floatUp linear infinite;opacity:0.6}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0deg) scale(1);opacity:0.7}50%{opacity:1}100%{transform:translateY(-110vh) rotate(720deg) scale(0.3);opacity:0}}
+
+/* ====== HERO ====== */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:2rem}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0d0015 0%,#1a0a2e 20%,#2d1b4e 40%,#4a1942 60%,#2d0a1e 80%,#0d0015 100%);z-index:0}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,77,109,0.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(181,23,158,0.15) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(255,215,0,0.08) 0%,transparent 50%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+
+/* Aurora / moving glow */
+.hero-aurora{position:absolute;inset:0;overflow:hidden;z-index:1}
+.hero-aurora span{position:absolute;border-radius:50%;filter:blur(80px);animation:auroraMove ease-in-out infinite}
+.aurora-1{width:500px;height:500px;background:rgba(255,77,109,0.2);top:-10%;left:-10%;animation-duration:8s !important}
+.aurora-2{width:400px;height:400px;background:rgba(181,23,158,0.15);bottom:-10%;right:-10%;animation-duration:10s !important;animation-delay:1s}
+.aurora-3{width:350px;height:350px;background:rgba(255,215,0,0.1);top:30%;right:20%;animation-duration:12s !important;animation-delay:2s}
+@keyframes auroraMove{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.1)}50%{transform:translate(-30px,50px) scale(0.9)}75%{transform:translate(40px,20px) scale(1.05)}}
+
+/* Stars */
+.hero-stars{position:absolute;inset:0;z-index:1;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.2)}}
+
+/* Butterflies */
+.butterfly-container{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.butterfly{position:absolute;font-size:22px;animation:butterflyFly linear infinite;opacity:0.8}
+@keyframes butterflyFly{
+0%{transform:translate(0,0) rotate(0deg) scaleX(1);opacity:0}
+5%{opacity:0.8}
+25%{transform:translate(25vw,-15vh) rotate(15deg) scaleX(-1)}
+50%{transform:translate(50vw,-5vh) rotate(-10deg) scaleX(1)}
+75%{transform:translate(70vw,-20vh) rotate(20deg) scaleX(-1)}
+95%{opacity:0.8}
+100%{transform:translate(95vw,-10vh) rotate(0deg) scaleX(1);opacity:0}
+}
+.butterfly-wing{display:inline-block;animation:wingFlap 0.3s ease-in-out infinite alternate}
+@keyframes wingFlap{0%{transform:scaleX(1)}100%{transform:scaleX(0.3)}}
+
+/* Rose petals */
+.petal{position:absolute;width:12px;height:12px;background:radial-gradient(ellipse,rgba(255,77,109,0.7),rgba(255,119,143,0.3));border-radius:50% 0 50% 0;animation:petalFall linear infinite;z-index:1}
+@keyframes petalFall{0%{transform:translateY(-10vh) rotate(0deg) translateX(0);opacity:0}10%{opacity:0.7}100%{transform:translateY(110vh) rotate(720deg) translateX(80px);opacity:0}}
+
+.hero-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* Heart with rings */
+.hero-heart-wrap{position:relative;margin-bottom:1rem}
+.hero-heart{font-size:clamp(3rem,10vw,6rem);animation:heartbeat 1.2s ease-in-out infinite;display:inline-block;filter:drop-shadow(0 0 30px rgba(255,77,109,0.8)) drop-shadow(0 0 60px rgba(255,77,109,0.4))}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.3)}28%{transform:scale(1)}42%{transform:scale(1.3)}70%{transform:scale(1)}}
+.heart-ring{position:absolute;border:2px solid rgba(255,77,109,0.3);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:ringExpand 3s ease-out infinite}
+.heart-ring:nth-child(2){animation-delay:1s}
+.heart-ring:nth-child(3){animation-delay:2s}
+@keyframes ringExpand{0%{width:60px;height:60px;opacity:0.8}100%{width:200px;height:200px;opacity:0}}
+
+/* Title */
+.hero-title{font-family:'Sacramento',cursive;font-size:clamp(3rem,10vw,7.5rem);line-height:1.1;position:relative;padding:0.2em 0}
+.hero-title-main{font-family:'Great Vibes';line-height:120px;:block;background:linear-gradient(90deg,#ff4d6d,#ffd700,#ff9ece,#b5179e,#ffd700,#ff4d6d);background-size:400% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s ease-in-out infinite,titleReveal 2s ease-out both;filter:drop-shadow(0 0 40px rgba(255,77,109,0.6)) drop-shadow(0 0 80px rgba(255,215,0,0.3));letter-spacing:3px}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes titleReveal{0%{opacity:0;transform:translateY(30px) scale(0.9);filter:blur(10px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.hero-title-glow{position:absolute;inset:0;font-family:'Great Vibes';font-size:clamp(3rem,10vw,7.5rem);color:transparent;-webkit-text-stroke:1px rgba(255,215,0,0.15);animation:titleFloat 4s ease-in-out infinite;pointer-events:none;line-height:1.1}
+@keyframes titleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.hero-divider{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--rose),var(--gold),transparent);margin:1rem auto;border-radius:2px;animation:fadeInUp 1.5s ease-out 0.8s both}
+.hero-divider::after{content:'✦';display:block;text-align:center;margin-top:-0.7rem;color:var(--gold);font-size:0.9rem;animation:spin 6s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.hero-names{font-family:'Dancing Script',cursive;font-size:clamp(1.3rem,3.5vw,2.2rem);color:var(--blush);text-shadow:0 0 30px rgba(255,179,198,0.5);animation:fadeInUp 1.5s ease-out 0.5s both;letter-spacing:1px}
+
+.hero-subtitle{font-family:'Poppins',sans-serif;font-size:clamp(0.82rem,1.8vw,1.05rem);color:rgba(255,200,220,0.8);max-width:620px;text-align:center;line-height:1.9;margin-top:1.5rem;animation:fadeInUp 1.5s ease-out 1s both;font-style:italic;position:relative;padding:0 1rem}
+.hero-subtitle::before,.hero-subtitle::after{font-family:'Great Vibes',cursive;font-size:1.5rem;color:rgba(255,215,0,0.4);position:absolute}
+.hero-subtitle::before{content:'"';top:-10px;left:-5px}
+.hero-subtitle::after{content:'"';bottom:-15px;right:-5px}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.scroll-indicator{position:absolute;bottom:30px;z-index:3;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(15px)}}
+.scroll-indicator i{color:var(--blush);font-size:1.5rem}
+
+/* ====== Section Styles ====== */
+section{padding:5rem 1.5rem;position:relative;z-index:1}
+.section-title{font-family:'Great Vibes',cursive;font-size:clamp(2rem,5vw,3.5rem);text-align:center;color:var(--deep);margin-bottom:1rem;position:relative}
+.section-title::after{content:'❤';display:block;font-size:1.2rem;margin-top:0.5rem;animation:heartbeat 1.2s ease-in-out infinite}
+.section-desc{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;font-size:0.95rem}
+
+/* ====== WHY I LOVE YOU ====== */
+.love-reasons{background:linear-gradient(180deg,#fce4ec,#f8d0dc,#fce4ec);padding:5rem 1.5rem}
+.love-reasons-grid{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative}
+
+.reason-card{padding:2rem 1.8rem;text-align:left;position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);border:1px solid rgba(255,182,193,0.3);background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border-radius:16px;box-shadow:0 4px 20px rgba(255,105,135,0.08)}
+.reason-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(255,105,135,0.18);border-color:rgba(255,105,135,0.25)}
+
+.reason-emoji{font-size:2.2rem;margin-bottom:1rem;display:inline-block;animation:emojiFloat 3s ease-in-out infinite}
+.reason-card:nth-child(2) .reason-emoji{animation-delay:0.3s}
+.reason-card:nth-child(3) .reason-emoji{animation-delay:0.6s}
+.reason-card:nth-child(4) .reason-emoji{animation-delay:0.9s}
+.reason-card:nth-child(5) .reason-emoji{animation-delay:1.2s}
+.reason-card:nth-child(6) .reason-emoji{animation-delay:1.5s}
+@keyframes emojiFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.1)}}
+
+.reason-card p{color:#555;font-size:0.95rem;line-height:1.7;margin:0}
+
+/* Card butterfly */
+.card-butterfly{position:absolute;top:12px;right:14px;font-size:1.1rem;opacity:0;transition:opacity 0.4s;animation:cardButterflyFly 4s ease-in-out infinite}
+.reason-card:hover .card-butterfly{opacity:1}
+@keyframes cardButterflyFly{0%{transform:translate(0,0) rotate(0deg) scale(1)}25%{transform:translate(-12px,-8px) rotate(-10deg) scale(1.1)}50%{transform:translate(-20px,2px) rotate(5deg) scale(0.95)}75%{transform:translate(-8px,-10px) rotate(-5deg) scale(1.05)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}
+
+/* ====== Love Message ====== */
+.love-section{background:linear-gradient(135deg,#fff0f3,#ffe5ec)}
+.love-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.love-image-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-love);animation:imageFloat 4s ease-in-out infinite}
+@keyframes imageFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-15px) rotate(1deg)}}
+.love-image-wrap img{width:100%;height:400px;object-fit:cover;display:block}
+.love-image-wrap::after{content:'❤';position:absolute;color: pink; top:15px;right:20px;font-size:2rem;animation:heartbeat 1.2s infinite}
+.love-text h2{font-family:'Great Vibes',cursive;font-size:clamp(2rem,4vw,3rem);color:var(--deep);margin-bottom:1rem}
+.love-text p{color:#555;line-height:2;font-size:0.95rem;margin-bottom:1.5rem}
+.love-quote{padding:1.5rem;background:rgba(255,77,109,0.08);border-left:4px solid var(--pink);border-radius:0 12px 12px 0;font-style:italic;color:var(--deep)}
+
+/* ====== Gallery ====== */
+.gallery-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:1.5rem}
+.gallery-item{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);cursor:pointer;aspect-ratio:1;transition:transform 0.4s}
+.gallery-item:hover{transform:scale(1.03)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.1)}
+.gallery-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(201,24,74,0.7),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1.5rem}
+.gallery-item:hover .overlay{opacity:1}
+.gallery-item .overlay span{color:#fff;font-family:'Dancing Script',cursive;font-size:1.3rem}
+
+/* ====== Memory Timeline ====== */
+.memory-section{background:linear-gradient(180deg,#fff,#fff0f3)}
+.timeline{max-width:800px;margin:0 auto;position:relative;padding:2rem 0}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--pink),var(--soft-purple),var(--pink));transform:translateX(-50%);border-radius:3px}
+.timeline-item{display:flex;align-items:center;margin-bottom:3rem;position:relative}
+.timeline-item:nth-child(odd){flex-direction:row-reverse}
+.timeline-content{width:45%;padding:2rem;background:#fff;border-radius:16px;box-shadow:var(--shadow-card);transition:all 0.4s;border:1px solid rgba(255,77,109,0.1)}
+.timeline-content:hover{transform:translateY(-5px);box-shadow:0 15px 45px rgba(255,77,109,0.2)}
+.timeline-dot{width:20px;height:20px;background:var(--gradient-love);border-radius:50%;position:absolute;left:50%;transform:translateX(-50%);z-index:2;box-shadow:0 0 0 5px rgba(255,77,109,0.2);animation:dotPulse 2s infinite}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 5px rgba(255,77,109,0.2)}50%{box-shadow:0 0 0 12px rgba(255,77,109,0.1)}}
+.timeline-content h3{font-family:cursive;font-size:1.4rem;color:var(--deep);margin-bottom:0.5rem}
+.timeline-content .date{font-size:0.8rem;color:var(--rose);font-weight:600;margin-bottom:0.5rem;display:block}
+.timeline-content p{color:#666;font-size:0.9rem;line-height:1.7}
+
+/* ====== Footer ====== */
+footer{background:linear-gradient(135deg,#1a0008,#3d0014,#1a0008);color:#fff;padding:4rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;top:-50px;left:0;right:0;height:100px;background:var(--warm);border-radius:0 0 50% 50%}
+.footer-heart{font-size:4rem;animation:heartbeat 1.2s infinite;margin-bottom:1rem;display:inline-block;filter:drop-shadow(0 0 20px rgba(255,77,109,0.6))}
+.footer-names{font-family:'Great Vibes',cursive;font-size:clamp(1.8rem,4vw,2.5rem);background:linear-gradient(90deg,var(--blush),var(--gold),var(--rose));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s infinite;margin-bottom:0.5rem}
+.footer-msg{color:rgba(255,179,198,0.7);font-size:0.9rem;margin-bottom:2rem;font-style:italic}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4)}
+.footer-social a{color:var(--blush);font-size:1.3rem;margin:0 0.8rem;transition:all 0.3s;display:inline-block;text-decoration:none}
+.footer-social a:hover{color:var(--gold);transform:translateY(-3px) scale(1.2)}
+
+/* Scroll Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.175,0.885,0.32,1.275)}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media(max-width:768px){
+.love-container{grid-template-columns:1fr;gap:2rem;text-align:center}
+.love-image-wrap{max-width:400px;margin:0 auto}
+.timeline::before{left:20px}
+.timeline-item,.timeline-item:nth-child(odd){flex-direction:row;padding-left:50px}
+.timeline-content{width:100%}
+.timeline-dot{left:20px}
+.love-reasons-grid{grid-template-columns:1fr;gap:1rem;max-width:400px}
+.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+section{padding:3.5rem 1rem}
+
+.section-desc {
+
+    padding: 0px 30px;
+}
+
+.hero-title-main {
+
+    line-height: 90px;
+   
+    font-size: 64px;
+}
+
+
+
+}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem}
+.lightbox.show{display:flex}
+.lightbox img{max-width:90%;max-height:85vh;border-radius:12px;box-shadow:0 0 60px rgba(255,77,109,0.3)}
+.lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:2rem;cursor:pointer;transition:transform 0.3s}
+.lightbox-close:hover{transform:rotate(90deg)}
+</style>
+</head>
+<body>
+
+<!-- Floating Hearts Background -->
+<div class="floating-hearts" id="floatingHearts"></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-aurora">
+    <span class="aurora-1"></span>
+    <span class="aurora-2"></span>
+    <span class="aurora-3"></span>
+  </div>
+  <div class="hero-stars" id="heroStars"></div>
+  <div class="butterfly-container" id="butterflies"></div>
+  <div id="petals"></div>
+
+  <div class="hero-content">
+    <div class="hero-heart-wrap">
+      <div class="heart-ring"></div>
+      <div class="heart-ring"></div>
+      <div class="heart-ring"></div>
+      <div class="hero-heart">❤️</div>
+    </div>
+
+    <div class="hero-title">
+      <span class="hero-title-glow">I Love You, Jasmin</span>
+      <span class="hero-title-main">I Love You, Jasmin</span>
+    </div>
+
+    <div class="hero-divider"></div>
+    <p class="hero-names">Wp Hridoy ❤️ Jasmin</p>
+    <p class="hero-subtitle">Ei boyoshe tomar jonno etota pagol hobo konudin vabini. Oi class 9-10 e abeger boyoshe jemon abegi feelings hoto. Tomar jonno ekhon sei feelings keno kaj kore bujhi na.</p>
+  </div>
+
+  <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- WHY I LOVE YOU -->
+<section class="love-reasons" id="feelings">
+  <h2 class="section-title">Why I Love You</h2>
+  <p class="section-desc">❤️ 100% Oshomvob jene o Ami tumer preme pore gesi. ❤️<br> Ai line ta selo tumake boila amar prothom onuvoti. <br> Akhan thekei shuru tumar proti ashokto</p>
+  <div class="love-reasons-grid">
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">💖</span>
+      <p>Sotti Onek Valobashi Tumake Jasmin. Ami jani Tumi o Amake Onek Valobasho.</p>
+    </div>
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">🌹</span>
+      <p>Tumake ki konu din vulte parbo? tumar moto ki kawke jibone konudin pabo?</p>
+    </div>
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">✨</span>
+      <p>Tumar shathe saradin kotha bola, iccha moto prem kora jodi gunah hoto!</p>
+    </div>
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">💕</span>
+      <p>Tumar moto feelings onno karo proti akhon porjonto ashenai. </p>
+    </div>
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">🦋</span>
+      <p>Tumar Sob Kicui amar valo Lage. Kotha Bola, hashi, Tumar Lip, Tumar chul.</p>
+    </div>
+    <div class="reason-card reveal">
+      <span class="card-butterfly">🦋</span>
+      <span class="reason-emoji">🥰</span>
+      <p>Tumake jodi sotti biye korte partam, Duniya ke tokhon Jannat Mone hoto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOVE MESSAGE -->
+<section class="love-section" id="message">
+  <h2 class="section-title">Moner Kicu Kotha</h2>
+  <p class="section-desc">Words from the deepest corner of my heart, just for you.</p>
+  <div class="love-container">
+    <div class="love-image-wrap reveal">
+      <img src="https://wphridoy.com/I_Love_Jasmin/wp-content/uploads/2026/04/I-Love-Jasmin.jpg" alt="Love Image">
+    </div>
+    <div class="love-text reveal">
+      <h2><i class="fas fa-feather-pointed" style="color:var(--pink);margin-right:10px"></i>Dear Jasmin</h2>
+      <p>Tumake kas theke shamna shamni cuye dekhar onek Iccha selo. kinto ata to oshomvob😔. Ami jani iccha ta tumar o selo. kinto ato boro haram kaj kivabe korbo😔. </p>
+      <p>Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam..Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam..</p>
+      <div class="love-quote">
+        <i class="fas fa-quote-left" style="color:var(--rose);margin-right:8px"></i>
+        Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam..
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2 class="section-title">Our Gallery</h2>
+  <p class="section-desc">Beautiful moments captured forever in my heart.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal"><img src="https://wphridoy.com/I_Love_Jasmin/wp-content/uploads/2026/04/I-Love-Jasmin.jpg" alt="Memory"><div class="overlay"><span>Beautiful Moment</span></div></div>
+    <div class="gallery-item reveal"><img src="https://placehold.co/400x400/e8d5f5/6b0028?text=Memory+2" alt="Memory"><div class="overlay"><span>Together Forever</span></div></div>
+    <div class="gallery-item reveal"><img src="https://placehold.co/400x400/ffe5ec/ff4d6d?text=Memory+3" alt="Memory"><div class="overlay"><span>Pure Love</span></div></div>
+    <div class="gallery-item reveal"><img src="https://placehold.co/400x400/ffd700/c9184a?text=Memory+4" alt="Memory"><div class="overlay"><span>Golden Days</span></div></div>
+    <div class="gallery-item reveal"><img src="https://placehold.co/400x400/ff758f/1a0008?text=Memory+5" alt="Memory"><div class="overlay"><span>Unforgettable</span></div></div>
+    <div class="gallery-item reveal"><img src="https://placehold.co/400x400/fff0f3/b5179e?text=Memory+6" alt="Memory"><div class="overlay"><span>My Everything</span></div></div>
+  </div>
+</section>
+
+<!-- MEMORY TIMELINE -->
+<section class="memory-section" id="memories">
+  <h2 class="section-title">Our Memories</h2>
+  <p class="section-desc">Tumar Shathe ghote jaua kicu memory. Sob memory likhte thakle bosor khanekh lege jabe</p>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <span class="date"><i class="fas fa-clock" style="margin-right:5px"></i>05-11-2022 AT 6:54 PM</span>
+        <h3>First Conversation</h3>
+        <p>Tumar shathe amar First Conversation akta Screenshot and akta message "interested". Kno je oi din tumar post ta amar shamne ashlo, na ashle hoyto ajke ami ei website tao banatam na. </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <span class="date"><i class="fas fa-comments" style="margin-right:5px"></i>14 December 2025 </span>
+        <h3>Onek Din por Tumar Knock</h3>
+        <p>Tumar oi diner akta knock, ajke tumar proti abeg valo laga, rag oviman sob kicur karon.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <span class="date"><i class="fas fa-heart" style="margin-right:5px"></i>Falling in Love</span>
+        <h3>Tumi te thai peye gelam</h3>
+        <p>Ami tumar amon akjon hoye gesilam take tumar tumi bolte icche hoy. tumar kace amake tumi bila mane onek kicu.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <span class="date"><i class="fas fa-infinity" style="margin-right:5px"></i>Forever & Always</span>
+        <h3>Mone Rakhbo Tumake</h3>
+        <p>Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam..Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam..</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-heart">💕</div>
+  <h2 class="footer-names">Wp Hridoy ❤️ Jasmin</h2>
+  <p class="footer-msg">Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. Sob Bad Dilam.. </p>
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fas fa-heart"></i></a>
+  </div>
+  <div class="footer-bottom">Made with ❤️ by Wp Hridoy</div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" alt="Full Image" id="lightboxImg">
+</div>
+
+<script>
+$(function(){
+  // Floating hearts
+  function createHeart(){
+    var h=$('<span class="heart-float">❤</span>');
+    var colors=['#ff4d6d','#ff758f','#ffb3c6','#ffd700','#b5179e'];
+    h.css({left:Math.random()*100+'%',fontSize:(15+Math.random()*25)+'px',color:colors[Math.floor(Math.random()*colors.length)],animationDuration:(6+Math.random()*8)+'s',animationDelay:Math.random()*3+'s'});
+    $('#floatingHearts').append(h);
+    setTimeout(function(){h.remove()},15000);
+  }
+  setInterval(createHeart,800);
+
+  // Hero stars
+  for(var i=0;i<80;i++){
+    var s=$('<div class="star"></div>');
+    s.css({left:Math.random()*100+'%',top:Math.random()*100+'%',animationDelay:Math.random()*4+'s',animationDuration:(1.5+Math.random()*3)+'s',width:(1+Math.random()*3)+'px',height:(1+Math.random()*3)+'px'});
+    $('#heroStars').append(s);
+  }
+
+  // Butterflies
+  var butterflyEmojis=['🦋'];
+  function createButterfly(){
+    var b=$('<div class="butterfly"><span class="butterfly-wing">🦋</span></div>');
+    var startY=20+Math.random()*60;
+    b.css({left:'-40px',top:startY+'%',fontSize:(18+Math.random()*18)+'px',animationDuration:(10+Math.random()*10)+'s',animationDelay:Math.random()*2+'s',opacity:0.6+Math.random()*0.4});
+    $('#butterflies').append(b);
+    setTimeout(function(){b.remove()},22000);
+  }
+  createButterfly();
+  setInterval(createButterfly,4000);
+
+  // Rose petals
+  function createPetal(){
+    var p=$('<div class="petal"></div>');
+    p.css({left:Math.random()*100+'%',animationDuration:(6+Math.random()*6)+'s',animationDelay:Math.random()*4+'s',width:(8+Math.random()*10)+'px',height:(8+Math.random()*10)+'px',opacity:0.3+Math.random()*0.4});
+    $('#petals').append(p);
+    setTimeout(function(){p.remove()},14000);
+  }
+  setInterval(createPetal,1500);
+
+  // Scroll reveal
+  function checkReveal(){
+    $('.reveal').each(function(){
+      var top=$(this).offset().top;
+      var wh=$(window).height();
+      var scroll=$(window).scrollTop();
+      if(top < scroll+wh-80){$(this).addClass('active')}
+    });
+  }
+  $(window).on('scroll',checkReveal);
+  checkReveal();
+
+  // Gallery lightbox
+  $('.gallery-item img').click(function(){
+    $('#lightboxImg').attr('src',$(this).attr('src'));
+    $('#lightbox').addClass('show');
+  });
+  $('#lightboxClose, #lightbox').click(function(e){
+    if(e.target===this)$('#lightbox').removeClass('show');
+  });
+});
+</script>
+</body>
+</html>
